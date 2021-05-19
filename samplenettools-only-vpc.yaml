@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nettools-only-vpc
+spec:
+  containers:
+  - name: nettools-only-vpc
+    command: ["sh", "-c", "trap : TERM INT; sleep infinity & wait"]
+    image: praqma/network-multitool

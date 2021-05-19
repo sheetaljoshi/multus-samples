@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: samplepod-vpc-cni
+spec:
+  containers:
+  - name: samplepod-vpc-cni
+    command: ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+    image: nginx

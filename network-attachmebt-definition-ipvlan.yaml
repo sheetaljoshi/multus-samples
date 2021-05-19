@@ -1,0 +1,17 @@
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: ipvlan-conf
+spec:
+  config: '{
+      "cniVersion": "0.3.0",
+      "type": "ipvlan",
+      "master": "eth1",
+      "mode": "l3",
+      "ipam": {
+        "type": "host-local",
+        "subnet": "192.168.192.0/19",
+        "rangeStart": "192.168.192.10",
+        "rangeEnd": "192.168.192.30"
+      }
+    }'
